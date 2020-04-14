@@ -16,3 +16,9 @@ But it will soon be much more than just a map in a cli...
 
 - [ ] Get common username and passwords if there are any
 --- 
+
+- [ ] Get processed data to mongodb
+---
+
+- [ ] Get graphql with basic queries
+---
