@@ -14,7 +14,7 @@ But it will soon be much more than just a map in a cli...
 - [x] Get ip info on all connections
 ---
 
-- [ ] Get common username and passwords if there are any
+- [ ] Get passwords if there are any
 --- 
 
 - [ ] Get processed data to mongodb
