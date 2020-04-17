@@ -16,7 +16,7 @@ fs.createReadStream(filepath)
     .pipe(csv())
     .on('data', (row) => {
         // console.log(row.lat,row.lon);
-        map.addMarker({'lat': row.lat, 'lon': row.lon, color: 'red', char: 'X'});
+        map.addMarker({'lat': row.lat, 'lon': row.lon, color: 'red', char: '*'});
     })
     .on('end', () => {
         screen.render();
