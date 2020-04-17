@@ -1,1 +1,3 @@
 /node_modules/
+/graphql-mongo-server/yarn.lock
+/graphql-mongo-server/package-lock.json
