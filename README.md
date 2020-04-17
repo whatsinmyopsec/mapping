@@ -17,7 +17,7 @@ But it will soon be much more than just a map in a cli...
 - [x] Get passwords if there are any
 --- 
 
-- [ ] Setup main data for mongodb
+- [x] Setup main data for mongodb
 ---
 
 - [ ] Get processed data to mongodb
