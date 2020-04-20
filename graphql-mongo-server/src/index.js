@@ -8,13 +8,13 @@ const startServer = async () => {
     const app = express();
 
     const server = new ApolloServer({
-        typeDefs,
-        resolvers
+       typeDefs,
+       resolvers
     });
 
-    server.applyMiddleware({ app });
+   server.applyMiddleware({ app });
 
-    await mongoose.connect("mongodb://localhost:27017/test", {
+    await mongoose.connect("mongodb://root:example@localhost:27017/mlogs?authSource=admin", {
         useNewUrlParser: true
     });
 
