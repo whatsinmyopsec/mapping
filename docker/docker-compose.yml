@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+
+  mongo:
+    container_name: store
+    image: mongo:latest
+    restart: always
+    volumes:
+      - /home/vape/fyp/docker:/data
+    ports:
+      - 27017:27017
+     environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
