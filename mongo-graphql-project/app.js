@@ -398,356 +398,21 @@ const MalwareModel = z.model("malwaretests",{
     md5:String
     }
 });
-
-// const MalwaresType = new GraphQLObjectType({
-//     name:"malwaretests",
-//     fields: {
-//         id: {type: GraphQLID},
-//         scans: { type:GraphQLList},
-//             Bkav: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             TotalDefence: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             MicroWorld_eScan: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             CMC: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             CAT_QuickHeal: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             McAfee: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             MalwareBytes: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             Zillya: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             SUPERAntiSpyware: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             K7AntiVirus: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             K7GW: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             Baidu: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             F_Prot: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             Symantec: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             ESET_NOD32: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             TrendMicro_HouseCall: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             Avast: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             ClamAV: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             Kaspersky: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             BitDefender: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             NANO_Antivurus: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             ViRobot: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             Rising: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             Ad_Aware: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             Sophos: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             Comodo: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             F_Secure: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             DrWeb: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             VIPRE: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             TrendMicro: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             McAfee_GQ_Edition: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             FireEye: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             Emsisoft: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             Ikarus: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             Cyren: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             Jiangmin: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             Avira: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             Fortinet: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             Antiy_AVL: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             Kingsoft: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             Arcabit: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             AegisLab: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             ZoneAlarm: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             Avast_Mobile: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             Microsoft: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             AhnLab_v3: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             ALYac: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             MAX: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             VBA32: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             Zoner: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             Tencent: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             Yandex: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             TACHYON: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             GData: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             AVG: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             Panda: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             },
-//             Qihoo_360: {
-//                 detected: {type: GraphQLString},
-//                 version: {type: GraphQLString},
-//                 result: {type: GraphQLBoolean},
-//                 update: {type: GraphQLString}
-//             }
-//         }
+// let ScanObjectType = new GraphQLObjectType({
+//     name: 'res',
+//     fields:{
+//         detected: {type: GraphQLBoolean},
+//         version: {type: GraphQLString},
+//         result: {type: GraphQLString},
+//         update: {type: GraphQLString}
+//     }
+// });
 //
+// let ScanType = new GraphQLObjectType({
+//     name: 'Scans',
+//     fields:()=> ({
+//         scans: {type: GraphQLList(ScanObjectType)}
+//     })
 // });
 
 let ScanType = new GraphQLObjectType({
@@ -760,12 +425,74 @@ let ScanType = new GraphQLObjectType({
         update: {type: GraphQLString},
     }
 });
+let scansType = new GraphQLObjectType({
+    name:'scanNames',
+    fields:{
+        Bkav: {type: ScanType},
+        TotalDefence: {type: ScanType},
+        MicroWorld_eScan: {type: ScanType},
+        CMC: {type: ScanType},
+        CAT_QuickHeal: {type: ScanType},
+        McAfee: {type: ScanType},
+        MalwareBytes: {type: ScanType},
+        Zillya: {type: ScanType},
+        SUPERAntiSpyware: {type: ScanType},
+        K7AntiVirus: {type: ScanType},
+        K7GW: {type: ScanType},
+        Baidu: {type: ScanType},
+        F_Prot: {type: ScanType},
+        Symantec: {type: ScanType},
+        ESET_NOD32: {type: ScanType},
+        TrendMicro_HouseCall: {type: ScanType},
+        Avast: {type: ScanType},
+        ClamAV: {type: ScanType},
+        Kaspersky: {type: ScanType},
+        BitDefender: {type: ScanType},
+        NANO_Antivurus: {type: ScanType},
+        ViRobot: {type: ScanType},
+        Rising: {type: ScanType},
+        Ad_Aware: {type: ScanType},
+        Sophos: {type: ScanType},
+        Comodo: {type: ScanType},
+        F_Secure: {type: ScanType},
+        DrWeb: {type: ScanType},
+        VIPRE: {type: ScanType},
+        TrendMicro: {type: ScanType},
+        McAfee_GQ_Edition: {type: ScanType},
+        FireEye: {type: ScanType},
+        Emsisoft: {type: ScanType},
+        Ikarus: {type: ScanType},
+        Cyren: {type: ScanType},
+        Jiangmin: {type: ScanType},
+        Avira: {type: ScanType},
+        Fortinet: {type: ScanType},
+        Antiy_AVL: {type: ScanType},
+        Kingsoft: {type: ScanType},
+        Arcabit: {type: ScanType},
+        AegisLab: {type: ScanType},
+        ZoneAlarm: {type: ScanType},
+        Avast_Mobile: {type: ScanType},
+        Microsoft: {type: ScanType},
+        AhnLab_v3: {type: ScanType},
+        ALYac: {type: ScanType},
+        MAX: {type: ScanType},
+        VBA32: {type: ScanType},
+        Zoner: {type: ScanType},
+        Tencent: {type: ScanType},
+        Yandex: {type: ScanType},
+        TACHYON: {type: ScanType},
+        GData: {type: ScanType},
+        AVG: {type: ScanType},
+        Panda: {type: ScanType},
+        Qihoo_360: {type: ScanType}
+    }
+});
 
 const MalwaresType = new GraphQLObjectType({
     name:"malwaretests",
     fields: () => ({
         id: {type: GraphQLID},
-        scans: { type:GraphQLList(ScanType)},
+        scans: { type:GraphQLList(scansType)},
     })
 });
 
@@ -806,9 +533,9 @@ const schema = new GraphQLSchema({
                }
            },
            malwaretests:{
-               type:GraphQLList(MalwaresType),
+               type: GraphQLList(MalwaresType),
                resolve:(root, args, context, info) => {
-                   return MalwareModel.find().exec();
+                   return MalwareModel.find().exec()
                }
            }
        }
