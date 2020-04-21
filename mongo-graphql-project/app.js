@@ -416,7 +416,7 @@ const MalwaresType = new GraphQLObjectType({
                 result: {type: GraphQLBoolean},
                 update: {type: GraphQLString}
             },
-            'MicroWorld-eScan': {
+            MicroWorld_eScan: {
                 detected: {type: GraphQLString},
                 version: {type: GraphQLString},
                 result: {type: GraphQLBoolean},
@@ -428,7 +428,7 @@ const MalwaresType = new GraphQLObjectType({
                 result: {type: GraphQLBoolean},
                 update: {type: GraphQLString}
             },
-            'CAT-QuickHeal': {
+            CAT_QuickHeal: {
                 detected: {type: GraphQLString},
                 version: {type: GraphQLString},
                 result: {type: GraphQLBoolean},
@@ -476,7 +476,7 @@ const MalwaresType = new GraphQLObjectType({
                 result: {type: GraphQLBoolean},
                 update: {type: GraphQLString}
             },
-            'F-Prot': {
+            F_Prot: {
                 detected: {type: GraphQLString},
                 version: {type: GraphQLString},
                 result: {type: GraphQLBoolean},
@@ -488,13 +488,13 @@ const MalwaresType = new GraphQLObjectType({
                 result: {type: GraphQLBoolean},
                 update: {type: GraphQLString}
             },
-            'ESET-NOD32': {
+            ESET_NOD32: {
                 detected: {type: GraphQLString},
                 version: {type: GraphQLString},
                 result: {type: GraphQLBoolean},
                 update: {type: GraphQLString}
             },
-            'TrendMicro-HouseCall': {
+            TrendMicro_HouseCall: {
                 detected: {type: GraphQLString},
                 version: {type: GraphQLString},
                 result: {type: GraphQLBoolean},
@@ -524,7 +524,7 @@ const MalwaresType = new GraphQLObjectType({
                 result: {type: GraphQLBoolean},
                 update: {type: GraphQLString}
             },
-            'NANO-Antivurus': {
+            NANO_Antivurus: {
                 detected: {type: GraphQLString},
                 version: {type: GraphQLString},
                 result: {type: GraphQLBoolean},
@@ -542,7 +542,7 @@ const MalwaresType = new GraphQLObjectType({
                 result: {type: GraphQLBoolean},
                 update: {type: GraphQLString}
             },
-            'Ad-Aware': {
+            Ad_Aware: {
                 detected: {type: GraphQLString},
                 version: {type: GraphQLString},
                 result: {type: GraphQLBoolean},
@@ -560,7 +560,7 @@ const MalwaresType = new GraphQLObjectType({
                 result: {type: GraphQLBoolean},
                 update: {type: GraphQLString}
             },
-            'F-Secure': {
+            F_Secure: {
                 detected: {type: GraphQLString},
                 version: {type: GraphQLString},
                 result: {type: GraphQLBoolean},
@@ -584,7 +584,7 @@ const MalwaresType = new GraphQLObjectType({
                 result: {type: GraphQLBoolean},
                 update: {type: GraphQLString}
             },
-            'McAfee-GQ-Edition': {
+            McAfee_GQ_Edition: {
                 detected: {type: GraphQLString},
                 version: {type: GraphQLString},
                 result: {type: GraphQLBoolean},
@@ -632,7 +632,7 @@ const MalwaresType = new GraphQLObjectType({
                 result: {type: GraphQLBoolean},
                 update: {type: GraphQLString}
             },
-            'Antiy-AVL': {
+            Antiy_AVL: {
                 detected: {type: GraphQLString},
                 version: {type: GraphQLString},
                 result: {type: GraphQLBoolean},
@@ -662,7 +662,7 @@ const MalwaresType = new GraphQLObjectType({
                 result: {type: GraphQLBoolean},
                 update: {type: GraphQLString}
             },
-            'Avast-Mobile': {
+            Avast_Mobile: {
                 detected: {type: GraphQLString},
                 version: {type: GraphQLString},
                 result: {type: GraphQLBoolean},
@@ -674,7 +674,7 @@ const MalwaresType = new GraphQLObjectType({
                 result: {type: GraphQLBoolean},
                 update: {type: GraphQLString}
             },
-            'AhnLab-v3': {
+            AhnLab_v3: {
                 detected: {type: GraphQLString},
                 version: {type: GraphQLString},
                 result: {type: GraphQLBoolean},
@@ -740,7 +740,7 @@ const MalwaresType = new GraphQLObjectType({
                 result: {type: GraphQLBoolean},
                 update: {type: GraphQLString}
             },
-            'Qihoo-360': {
+            Qihoo_360: {
                 detected: {type: GraphQLString},
                 version: {type: GraphQLString},
                 result: {type: GraphQLBoolean},
