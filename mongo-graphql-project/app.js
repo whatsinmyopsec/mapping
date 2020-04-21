@@ -40,7 +40,7 @@ const DownloadsModel = x.model("downloads",{
     url: String
 });
 
-const IpModel = y.model("ips",{
+const MalwareModel = z.model("malwaretests",{
     _id: String,
     scans:{
         Bkav:{
@@ -399,8 +399,8 @@ const IpModel = y.model("ips",{
     }
 });
 
-const IpsType = new GraphQLObjectType({
-    name:"ips",
+const MalwaresType = new GraphQLObjectType({
+    name:"malwaretests",
     fields: {
         id: {type: GraphQLID},
         scans: { type:GraphQLList},
@@ -786,12 +786,12 @@ const schema = new GraphQLSchema({
                    return DownloadsModel.findById(args.id).exec();
                }
            },
-           ips:{
-               type:GraphQLList(IpsType),
+           malwaretests:{
+               type:GraphQLList(MalwaresType),
                resolve:(root, args, context, info) => {
-                   return IpModel.find().exec();
+                   return MalwareModel.find().exec();
                }
-           },
+           }
        }
    })
 });
