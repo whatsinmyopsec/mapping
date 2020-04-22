@@ -25,6 +25,24 @@ const z = Mongoose.createConnection("mongodb://root:example@localhost:27017/malw
     useNewUrlParser: true
 });
 
+const IPModel = y.model("ips",{
+    _id:String,
+        x:[{
+            ip : String,
+            city : String,
+            region : String,
+            country : String,
+            loc : String,
+            org : String,
+            postal : String,
+            timezone : String,
+            country_name : String,
+            latitude : String,
+            longitude : String
+        }]
+});
+
+
 const DownloadsModel = x.model("downloads",{
     _id: String,
     destfile: String,
@@ -42,349 +60,350 @@ const DownloadsModel = x.model("downloads",{
 
 const MalwareModel = z.model("malwaretests",{
     _id: String,
-    scans:{
-        Bkav:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        TotalDefence:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        'MicroWorld-eScan':{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        CMC:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        'CAT-QuickHeal':{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        McAfee:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        MalwareBytes:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        Zillya:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        SUPERAntiSpyware:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        K7AntiVirus:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        K7GW:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        Baidu:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        'F-Prot':{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        Symantec:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        'ESET-NOD32':{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        'TrendMicro-HouseCall':{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        Avast:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        ClamAV:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        Kaspersky:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        BitDefender:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        'NANO-Antivurus':{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        ViRobot:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        Rising:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        'Ad-Aware':{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        Sophos:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        Comodo:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        'F-Secure':{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        DrWeb:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        VIPRE:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        TrendMicro:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        'McAfee-GQ-Edition':{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        FireEye:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        Emsisoft:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        Ikarus:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        Cyren:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        Jiangmin:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        Avira:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        Fortinet:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        'Antiy-AVL':{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        Kingsoft:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        Arcabit:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        AegisLab:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        ZoneAlarm:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        'Avast-Mobile':{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        Microsoft:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        'AhnLab-v3':{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        ALYac:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        MAX:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        VBA32:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        Zoner:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        Tencent:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        Yandex:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        TACHYON:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        GData:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        AVG:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        Panda:{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
-        'Qihoo-360':{
-            detected:String,
-            version:String,
-            result:Boolean,
-            update:String
-        },
+        scans:[{
+            Bkav: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            TotalDefence: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            'MicroWorld-eScan': [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            CMC: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            'CAT-QuickHeal': [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            McAfee: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            MalwareBytes: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            Zillya: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            SUPERAntiSpyware: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            K7AntiVirus: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            K7GW: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            Baidu: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            'F-Prot': [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            Symantec: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            'ESET-NOD32': [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            'TrendMicro-HouseCall': [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            Avast: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            ClamAV: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            Kaspersky: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            BitDefender: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            'NANO-Antivurus': [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            ViRobot: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            Rising: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            'Ad-Aware': [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            Sophos: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            Comodo: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            'F-Secure': [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            DrWeb: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            VIPRE: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            TrendMicro: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            'McAfee-GQ-Edition': [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            FireEye: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            Emsisoft: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            Ikarus: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            Cyren: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            Jiangmin: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            Avira: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            Fortinet: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            'Antiy-AVL': [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            Kingsoft: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            Arcabit: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            AegisLab: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            ZoneAlarm: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            'Avast-Mobile': [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            Microsoft: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            'AhnLab-v3': [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            ALYac: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            MAX: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            VBA32: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            Zoner: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            Tencent: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            Yandex: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            TACHYON: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            GData: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            AVG: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            Panda: [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }],
+            'Qihoo-360': [{
+                detected: Boolean,
+                version: String,
+                result: String,
+                update: String
+            }]
+        }],
     scan_id:String,
     sha1: String,
     resource:String,
@@ -396,108 +415,86 @@ const MalwareModel = z.model("malwaretests",{
     positives:Number,
     sha256:String,
     md5:String
-    }
-});
-// let ScanObjectType = new GraphQLObjectType({
-//     name: 'res',
-//     fields:{
-//         detected: {type: GraphQLBoolean},
-//         version: {type: GraphQLString},
-//         result: {type: GraphQLString},
-//         update: {type: GraphQLString}
-//     }
-// });
-//
-// let ScanType = new GraphQLObjectType({
-//     name: 'Scans',
-//     fields:()=> ({
-//         scans: {type: GraphQLList(ScanObjectType)}
-//     })
-// });
+    });
+
 
 let ScanType = new GraphQLObjectType({
-    name: 'Scan',
-    fields: {
-        name: {type: GraphQLNonNull(GraphQLString)},
-        detected: {type: GraphQLString},
+    name: 'scan',
+    description:'what was returned by those scans',
+    fields:{
+        detected: {type: GraphQLBoolean},
         version: {type: GraphQLString},
-        result: {type: GraphQLBoolean},
+        result: {type: GraphQLString},
         update: {type: GraphQLString},
     }
 });
 let scansType = new GraphQLObjectType({
     name:'scanNames',
-    fields:{
-        Bkav: {type: ScanType},
-        TotalDefence: {type: ScanType},
-        MicroWorld_eScan: {type: ScanType},
-        CMC: {type: ScanType},
-        CAT_QuickHeal: {type: ScanType},
-        McAfee: {type: ScanType},
-        MalwareBytes: {type: ScanType},
-        Zillya: {type: ScanType},
-        SUPERAntiSpyware: {type: ScanType},
-        K7AntiVirus: {type: ScanType},
-        K7GW: {type: ScanType},
-        Baidu: {type: ScanType},
-        F_Prot: {type: ScanType},
-        Symantec: {type: ScanType},
-        ESET_NOD32: {type: ScanType},
-        TrendMicro_HouseCall: {type: ScanType},
-        Avast: {type: ScanType},
-        ClamAV: {type: ScanType},
-        Kaspersky: {type: ScanType},
-        BitDefender: {type: ScanType},
-        NANO_Antivurus: {type: ScanType},
-        ViRobot: {type: ScanType},
-        Rising: {type: ScanType},
-        Ad_Aware: {type: ScanType},
-        Sophos: {type: ScanType},
-        Comodo: {type: ScanType},
-        F_Secure: {type: ScanType},
-        DrWeb: {type: ScanType},
-        VIPRE: {type: ScanType},
-        TrendMicro: {type: ScanType},
-        McAfee_GQ_Edition: {type: ScanType},
-        FireEye: {type: ScanType},
-        Emsisoft: {type: ScanType},
-        Ikarus: {type: ScanType},
-        Cyren: {type: ScanType},
-        Jiangmin: {type: ScanType},
-        Avira: {type: ScanType},
-        Fortinet: {type: ScanType},
-        Antiy_AVL: {type: ScanType},
-        Kingsoft: {type: ScanType},
-        Arcabit: {type: ScanType},
-        AegisLab: {type: ScanType},
-        ZoneAlarm: {type: ScanType},
-        Avast_Mobile: {type: ScanType},
-        Microsoft: {type: ScanType},
-        AhnLab_v3: {type: ScanType},
-        ALYac: {type: ScanType},
-        MAX: {type: ScanType},
-        VBA32: {type: ScanType},
-        Zoner: {type: ScanType},
-        Tencent: {type: ScanType},
-        Yandex: {type: ScanType},
-        TACHYON: {type: ScanType},
-        GData: {type: ScanType},
-        AVG: {type: ScanType},
-        Panda: {type: ScanType},
-        Qihoo_360: {type: ScanType}
+    description:'list of malware scanners',
+    fields: {
+        Bkav: {type: GraphQLList(ScanType)},
+        TotalDefence: {type: GraphQLList(ScanType)},
+        MicroWorld_eScan: {type: GraphQLList(ScanType)},
+        CMC: {type: GraphQLList(ScanType)},
+        McAfee: {type: GraphQLList(ScanType)},
+        MalwareBytes: {type: GraphQLList(ScanType)},
+        Zillya: {type: GraphQLList(ScanType)},
+        SUPERAntiSpyware: {type: GraphQLList(ScanType)},
+        K7AntiVirus: {type: GraphQLList(ScanType)},
+        K7GW: {type: GraphQLList(ScanType)},
+        Baidu: {type: GraphQLList(ScanType)},
+        Symantec: {type: GraphQLList(ScanType)},
+        Avast: {type: GraphQLList(ScanType)},
+        ClamAV: {type: GraphQLList(ScanType)},
+        Kaspersky: {type: GraphQLList(ScanType)},
+        BitDefender: {type: GraphQLList(ScanType)},
+        ViRobot: {type: GraphQLList(ScanType)},
+        Rising: {type: GraphQLList(ScanType)},
+        Sophos: {type: GraphQLList(ScanType)},
+        Comodo: {type: GraphQLList(ScanType)},
+        DrWeb: {type: GraphQLList(ScanType)},
+        VIPRE: {type: GraphQLList(ScanType)},
+        TrendMicro: {type: GraphQLList(ScanType)},
+        FireEye: {type: GraphQLList(ScanType)},
+        Emsisoft: {type: GraphQLList(ScanType)},
+        Ikarus: {type: GraphQLList(ScanType)},
+        Cyren: {type: GraphQLList(ScanType)},
+        Jiangmin: {type: GraphQLList(ScanType)},
+        Avira: {type: GraphQLList(ScanType)},
+        Fortinet: {type: GraphQLList(ScanType)},
+        Kingsoft: {type: GraphQLList(ScanType)},
+        Arcabit: {type: GraphQLList(ScanType)},
+        AegisLab: {type: GraphQLList(ScanType)},
+        ZoneAlarm: {type: GraphQLList(ScanType)},
+        Microsoft: {type: GraphQLList(ScanType)},
+        ALYac: {type: GraphQLList(ScanType)},
+        MAX: {type: GraphQLList(ScanType)},
+        VBA32: {type: GraphQLList(ScanType)},
+        Zoner: {type: GraphQLList(ScanType)},
+        Tencent: {type: GraphQLList(ScanType)},
+        Yandex: {type: GraphQLList(ScanType)},
+        TACHYON: {type: GraphQLList(ScanType)},
+        GData: {type: GraphQLList(ScanType)},
+        AVG: {type: GraphQLList(ScanType)},
+        Panda: {type: GraphQLList(ScanType)}
     }
 });
 
 const MalwaresType = new GraphQLObjectType({
     name:"malwaretests",
-    fields: () => ({
+    description:"First layer of malware exports",
+    fields:{
         id: {type: GraphQLID},
         scans: { type:GraphQLList(scansType)},
-    })
+        total:{type: GraphQLString},
+        positives:{type:GraphQLString},
+        scan_date:{type:GraphQLString}
+    }
 });
 
 const DownloadsType = new GraphQLObjectType({
     name: "Download",
+    description: "Honeypot data",
     fields: {
         id: { type: GraphQLID },
         destfile: { type: GraphQLString },
@@ -512,10 +509,37 @@ const DownloadsType = new GraphQLObjectType({
         url: { type: GraphQLString }
     }
 });
+let ipInnerType = new GraphQLObjectType({
+    name:"info",
+    description:"what do you want to know?",
+    fields:{
+        ip : { type: GraphQLString },
+        city : { type: GraphQLString },
+        region : { type: GraphQLString },
+        country : { type: GraphQLString },
+        loc : { type: GraphQLString },
+        org : { type: GraphQLString },
+        postal : { type: GraphQLString },
+        timezone : { type: GraphQLString },
+        country_name : { type: GraphQLString },
+        latitude : { type: GraphQLString },
+        longitude : { type: GraphQLString }
+    }
+});
+
+const IPType = new GraphQLObjectType({
+    name: "ipinfo",
+    description:"data from ipinfo",
+    fields:{
+        id: { type:GraphQLID},
+        x:{ type:GraphQLList(ipInnerType)}
+    }
+});
 
 const schema = new GraphQLSchema({
    query: new GraphQLObjectType({
        name: "Query",
+       description: '',
        fields: {
            downloads: {
                type:GraphQLList(DownloadsType),
@@ -536,6 +560,12 @@ const schema = new GraphQLSchema({
                type: GraphQLList(MalwaresType),
                resolve:(root, args, context, info) => {
                    return MalwareModel.find().exec()
+               }
+           },
+           ipinfo:{
+               type:GraphQLList(IPType),
+               resolve:(root, args, context, info) => {
+                   return IPModel.find().exec()
                }
            }
        }
