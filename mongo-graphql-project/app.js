@@ -503,6 +503,7 @@ const DownloadsType = new GraphQLObjectType({
         eventid: { type: GraphQLString },
         message: { type: GraphQLString },
         outfile: { type: GraphQLString },
+        sensor: {type:GraphQLString},
         session: { type: GraphQLString },
         shasum: { type: GraphQLString },
         src_ip: { type: GraphQLString },
