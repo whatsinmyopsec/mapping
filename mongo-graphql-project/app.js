@@ -25,22 +25,22 @@ const z = Mongoose.createConnection("mongodb://root:example@localhost:27017/malw
     useNewUrlParser: true
 });
 
-const IPModel = y.model("ipinfo",{
+const IPModel = y.model("ipinfos",{
     _id: String,
-        info:[{
-            ip: String,
-            hostname: String,
-            city: String,
-            region: String,
-            country: String,
-            loc: String,
-            org: String,
-            postal: String,
-            timezone: String,
-            country_name: String,
-            latitude: String,
-            longitude: String
-        }]
+    info:[{
+        ip: String,
+        hostname: String,
+        city: String,
+        region: String,
+        country: String,
+        loc: String,
+        org: String,
+        postal: String,
+        timezone: String,
+        country_name: String,
+        latitude: String,
+        longitude: String
+    }]
 });
 
 
@@ -529,8 +529,8 @@ let ipInnerType = new GraphQLObjectType({
     }
 });
 
-const IPType = new GraphQLObjectType({
-    name: "ipinfo",
+const IpType = new GraphQLObjectType({
+    name: "ipinfos",
     description:"data from ipinfo",
     fields:{
         id: { type:GraphQLID},
@@ -564,8 +564,8 @@ const schema = new GraphQLSchema({
                    return MalwareModel.find().exec()
                }
            },
-           ipinfo:{
-               type: GraphQLList(IPType),
+           ipinfos:{
+               type: GraphQLList(IpType),
                resolve:(root, args, context, info) => {
                    return IPModel.find().exec()
                }
@@ -581,4 +581,4 @@ app.use("/graphql", ExpressGraphQL({
 
 app.listen(3000, () => {
    console.log("listening at :3000...");
-});
+  });
