@@ -25,20 +25,21 @@ const z = Mongoose.createConnection("mongodb://root:example@localhost:27017/malw
     useNewUrlParser: true
 });
 
-const IPModel = y.model("ips",{
-    _id:String,
-        x:[{
-            ip : String,
-            city : String,
-            region : String,
-            country : String,
-            loc : String,
-            org : String,
-            postal : String,
-            timezone : String,
-            country_name : String,
-            latitude : String,
-            longitude : String
+const IPModel = y.model("ipinfo",{
+    _id: String,
+        info:[{
+            ip: String,
+            hostname: String,
+            city: String,
+            region: String,
+            country: String,
+            loc: String,
+            org: String,
+            postal: String,
+            timezone: String,
+            country_name: String,
+            latitude: String,
+            longitude: String
         }]
 });
 
@@ -513,17 +514,18 @@ let ipInnerType = new GraphQLObjectType({
     name:"info",
     description:"what do you want to know?",
     fields:{
-        ip : { type: GraphQLString },
-        city : { type: GraphQLString },
-        region : { type: GraphQLString },
-        country : { type: GraphQLString },
-        loc : { type: GraphQLString },
-        org : { type: GraphQLString },
-        postal : { type: GraphQLString },
-        timezone : { type: GraphQLString },
-        country_name : { type: GraphQLString },
-        latitude : { type: GraphQLString },
-        longitude : { type: GraphQLString }
+        ip: { type: GraphQLString },
+        hostname: { type: GraphQLString},
+        city: { type: GraphQLString },
+        region: { type: GraphQLString },
+        country: { type: GraphQLString },
+        loc: { type: GraphQLString },
+        org: { type: GraphQLString },
+        postal: { type: GraphQLString },
+        timezone: { type: GraphQLString },
+        country_name: { type: GraphQLString },
+        latitude: { type: GraphQLString },
+        longitude: { type: GraphQLString }
     }
 });
 
@@ -532,14 +534,14 @@ const IPType = new GraphQLObjectType({
     description:"data from ipinfo",
     fields:{
         id: { type:GraphQLID},
-        x:{ type:GraphQLList(ipInnerType)}
+        info: { type:GraphQLList(ipInnerType)}
     }
 });
 
 const schema = new GraphQLSchema({
    query: new GraphQLObjectType({
        name: "Query",
-       description: '',
+       description: 'root',
        fields: {
            downloads: {
                type:GraphQLList(DownloadsType),
@@ -563,7 +565,7 @@ const schema = new GraphQLSchema({
                }
            },
            ipinfo:{
-               type:GraphQLList(IPType),
+               type: GraphQLList(IPType),
                resolve:(root, args, context, info) => {
                    return IPModel.find().exec()
                }
