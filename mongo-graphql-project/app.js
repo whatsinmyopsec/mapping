@@ -7,6 +7,7 @@ const {
     GraphQLList,
     GraphQLBoolean,
     GraphQLObjectType,
+    GraphQLUnionType,
     GraphQLSchema,
     GraphQLNonNull
 } = require("graphql");
@@ -26,7 +27,7 @@ const z = Mongoose.createConnection("mongodb://root:example@localhost:27017/malw
 });
 
 const IPModel = y.model("ipinfos", {
-    _id: String,
+   // _id: String,
     info: [{
         ip: String,
         hostname: String,
@@ -45,7 +46,7 @@ const IPModel = y.model("ipinfos", {
 
 
 const DownloadsModel = x.model("downloads", {
-    _id: String,
+   // _id: String,
     destfile: String,
     duplicate: Boolean,
     eventid: String,
@@ -60,7 +61,18 @@ const DownloadsModel = x.model("downloads", {
 });
 
 const MalwareModel = z.model("malwaretests", {
-    _id: String,
+   // _id: String,
+    scan_id: String,
+    sha1: String,
+    //resource: String,
+    response_code: Number,
+    scan_date: String,
+    permalink: String,
+    verbose_msg: String,
+    total: Number,
+    positives: Number,
+    sha256: String,
+    md5: String,
     scans: [{
         Bkav: [{
             detected: Boolean,
@@ -98,7 +110,7 @@ const MalwareModel = z.model("malwaretests", {
             result: String,
             update: String
         }],
-        MalwareBytes: [{
+        Malwarebytes: [{
             detected: Boolean,
             version: String,
             result: String,
@@ -405,17 +417,6 @@ const MalwareModel = z.model("malwaretests", {
             update: String
         }]
     }],
-    scan_id: String,
-    sha1: String,
-    resource: String,
-    response_code: Number,
-    scan_date: String,
-    permalink: String,
-    verbose_msg: String,
-    total: Number,
-    positives: Number,
-    sha256: String,
-    md5: String
 });
 
 
@@ -438,7 +439,7 @@ let scansType = new GraphQLObjectType({
         MicroWorld_eScan: {type: GraphQLList(ScanType)},
         CMC: {type: GraphQLList(ScanType)},
         McAfee: {type: GraphQLList(ScanType)},
-        MalwareBytes: {type: GraphQLList(ScanType)},
+        Malwarebytes: {type: GraphQLList(ScanType)},
         Zillya: {type: GraphQLList(ScanType)},
         SUPERAntiSpyware: {type: GraphQLList(ScanType)},
         K7AntiVirus: {type: GraphQLList(ScanType)},
@@ -489,7 +490,8 @@ const MalwaresType = new GraphQLObjectType({
         scans: {type: GraphQLList(scansType)},
         total: {type: GraphQLString},
         positives: {type: GraphQLString},
-        scan_date: {type: GraphQLString}
+        scan_date: {type: GraphQLString},
+        resource: {type:GraphQLString}
     }
 });
 
@@ -546,29 +548,47 @@ const schema = new GraphQLSchema({
         fields: {
             downloads: {
                 type: GraphQLList(DownloadsType),
-                resolve: (root, args, context, info) => {
+                resolve: () => {
                     return DownloadsModel.find().exec();
                 }
             },
             download: {
                 type: DownloadsType,
                 args: {
-                    id: {type: GraphQLNonNull(GraphQLID)}
+                    id: {type: GraphQLNonNull(GraphQLString)}
                 },
-                resolve: (root, args, context, info) => {
-                    return DownloadsModel.findById(args.id).exec();
+                resolve: (root, args) => {
+                    return DownloadsModel.findById(args.id).exec()
                 }
             },
             malwaretests: {
                 type: GraphQLList(MalwaresType),
-                resolve: (root, args, context, info) => {
+                resolve: () => {
                     return MalwareModel.find().exec()
+                }
+            },
+            malware:{
+                type: MalwaresType,
+                args:{
+                    resource: {type:GraphQLNonNull(GraphQLString)}
+                },
+                resolve:(root,args,context,info)=>{
+                    return MalwareModel.findOne({type:args}).exec()
                 }
             },
             ipinfos: {
                 type: GraphQLList(IpType),
-                resolve: (root, args, context, info) => {
+                resolve: () => {
                     return IPModel.find().exec()
+                }
+            },
+            ipinfo: {
+                type: IpType,
+                args: {
+                    id: {type:GraphQLNonNull(GraphQLString)}
+                },
+                resolve:(root,args)=>{
+                    return IPModel.findById(args.id).exec()
                 }
             }
         }
