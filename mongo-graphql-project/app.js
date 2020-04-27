@@ -7,7 +7,6 @@ const {
     GraphQLList,
     GraphQLBoolean,
     GraphQLObjectType,
-    GraphQLUnionType,
     GraphQLSchema,
     GraphQLNonNull
 } = require("graphql");
@@ -64,7 +63,7 @@ const MalwareModel = z.model("malwaretests", {
    // _id: String,
     scan_id: String,
     sha1: String,
-    //resource: String,
+    resource: String,
     response_code: Number,
     scan_date: String,
     permalink: String,
@@ -552,7 +551,7 @@ const schema = new GraphQLSchema({
                     return DownloadsModel.find().exec();
                 }
             },
-            download: {
+            getDownloadByID: {
                 type: DownloadsType,
                 args: {
                     id: {type: GraphQLNonNull(GraphQLString)}
@@ -561,28 +560,28 @@ const schema = new GraphQLSchema({
                     return DownloadsModel.findById(args.id).exec()
                 }
             },
-            malwaretests: {
+            getAllMalwareResults: {
                 type: GraphQLList(MalwaresType),
                 resolve: () => {
                     return MalwareModel.find().exec()
                 }
             },
-            malware:{
+            getMalwareByID:{
                 type: MalwaresType,
                 args:{
-                    resource: {type:GraphQLNonNull(GraphQLString)}
+                    id: {type:GraphQLNonNull(GraphQLString)}
                 },
-                resolve:(root,args,context,info)=>{
-                    return MalwareModel.findOne({type:args}).exec()
+                resolve:(root,args)=>{
+                    return MalwareModel.findById(args.id).exec()
                 }
             },
-            ipinfos: {
+            getAllIpinfoResults: {
                 type: GraphQLList(IpType),
                 resolve: () => {
                     return IPModel.find().exec()
                 }
             },
-            ipinfo: {
+            getIpinfoByID: {
                 type: IpType,
                 args: {
                     id: {type:GraphQLNonNull(GraphQLString)}
