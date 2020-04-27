@@ -545,7 +545,7 @@ const schema = new GraphQLSchema({
         name: "Query",
         description: 'root',
         fields: {
-            downloads: {
+            getAllDownloads: {
                 type: GraphQLList(DownloadsType),
                 resolve: () => {
                     return DownloadsModel.find().exec();
