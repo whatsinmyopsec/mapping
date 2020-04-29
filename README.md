@@ -20,8 +20,8 @@ But it will soon be much more than just a map in a cli...
 - [x] Setup main data for mongodb
 ---
 
-- [ ] Get processed data to mongodb
+- [x] Get processed data to mongodb
 ---
 
-- [ ] Get graphql with basic queries
+- [x] Get graphql with basic queries
 ---
